@@ -41,6 +41,8 @@ function App() {
         }
       }, 250);
       setSearchTimeout(timeout);
+    } else {
+      setSearchResult([]);
     }
 
   }
