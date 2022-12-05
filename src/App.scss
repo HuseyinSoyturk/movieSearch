@@ -1,0 +1,103 @@
+$background-color: #443f5d;
+$input-color: #9f9cb3;
+$search-result-color: #f7f7f7;
+$search-result-alternative-color: #e8e8e8;
+
+
+.App {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 70%;
+    border: 3px inset $background-color;
+
+    .search-bar {
+      background-color: $background-color;
+      padding: 10px 20px 20px 20px;
+
+      .search-icon {
+        color: $input-color;
+        margin-right: 10px;
+      }
+
+      .input-bar {
+        width: 60%;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid $input-color;
+        color: $input-color;
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+
+  }
+
+  .search-list {
+    overflow: hidden;
+    color: #353535;
+
+    .search-icon {
+      margin-right: 5px;
+    }
+
+    .search-result-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+      padding: 10px 20px;
+      background-color: $search-result-color;
+
+      &:nth-of-type(even) {
+        background-color: $search-result-alternative-color;
+      }
+
+      .movie-title {
+        font-size: 20px;
+        padding: 5px;
+      }
+
+      .movie-detail-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        .movie-info {
+          width: 50%;
+          display: flex;
+          flex-direction: row;
+
+          div {
+            width: 50%;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .search-result-container {
+        .movie-detail-container {
+          flex-direction: column;
+
+          .movie-info {
+            width: 100%;
+            flex-direction: column;
+
+            div {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
